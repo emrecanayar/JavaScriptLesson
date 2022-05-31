@@ -55,7 +55,7 @@ value = Math.min(10, -1, 100, 32); //Min metodu içerisine aldığı sayılsal d
 
 value = Math.random(); // 0 ve 1 arasında rastgele bir sayı verir.
 
-//0 ile 20 arasında rastgale sayı üretmek istiyorum.
+//0 ile 20 arasında rastgale tam sayı üretmek istiyorum.
 
 value = Math.floor(Math.random() * 20);
 
