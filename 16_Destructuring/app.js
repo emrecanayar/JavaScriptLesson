@@ -23,7 +23,7 @@ console.log(`Adınız : ${firstName}, Soyadınız: ${lastName}, Yaşınız : ${a
 
 const getThePerson = () => {
   return {
-    country: "Turkey",
+    country: "Turkeye",
     city: "İstanbul",
     firstName: "Merve",
     lastName: "Doğan",
