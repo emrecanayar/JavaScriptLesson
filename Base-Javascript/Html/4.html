@@ -7,8 +7,9 @@
 
     <script type="text/javascript">
       function MailAdresiOlustur(name, surname) {
-        console.log(document);
-        var mailAddress = `${name}.${surname}@dogan.com`;
+        var nameString = name.toString();
+        var surnameString = surname.toString();
+        var mailAddress = `${nameString.toLowerCase()}.${surnameString.toLowerCase()}@dogan.com`;
         document.getElementById("demo").innerHTML = mailAddress;
       }
     </script>
