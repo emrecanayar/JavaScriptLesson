@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Base JavaScript Ders 4</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+      function MailAdresiOlustur(name, surname) {
+        console.log(document);
+        var mailAddress = `${name}.${surname}@dogan.com`;
+        document.getElementById("demo").innerHTML = mailAddress;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" style="margin-top: 50px">
+        <figure>
+          <pre>
+                    <span id="demo"></span>
+          </pre>
+        </figure>
+        <div class="col-md-6">
+          <label>Ad:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="txtAd"
+            placeholder="Adınızı giriniz..."
+          />
+        </div>
+        <div class="col-md-6">
+          <label>Soyad:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="txtSoyad"
+            placeholder="Soyadınızı giriniz..."
+          />
+        </div>
+        <div class="col-lg-12" style="margin-top: 20px">
+          <button
+            style="float: right"
+            class="btn btn-default"
+            onclick="MailAdresiOlustur(document.getElementById('txtAd').value,document.getElementById('txtSoyad').value)"
+          >
+            Mail Adresi Oluştur
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
