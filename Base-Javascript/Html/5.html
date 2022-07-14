@@ -24,13 +24,11 @@
           <button type="button" id="btn5" class="btn btn-default">
             forEach
           </button>
-          <button type="button" id="btn6" class="btn btn-default">
-            push
+          <button type="button" id="btn6" class="btn btn-default">push</button>
+          <button type="button" id="btn7" class="btn btn-default">pop</button>
+          <button type="button" id="btn8" class="btn btn-default">
+            unshift
           </button>
-          <button type="button" id="btn7" class="btn btn-default">
-            pop
-          </button>
-          <button type="button" id="btn8" class="btn btn-default">unshift</button>
           <button type="button" id="btn9" class="btn btn-default">shift</button>
           <button type="button" id="btn10" class="btn btn-default">
             splice
@@ -43,25 +41,23 @@
 
 <script type="text/javascript">
   //Bir olay gerçekleştiğinde çalışmasını istediğimiz kodları aşağıdaki gibi oluşturabiliriz.
-
   //   document.getElementById("btn1").onclick = function () {
-  //     alert("btn1");
+  //     alert('btn1');
   //   };
 
-  //   document.getElementById("btn2").addEventListener("click", function () {
-  //     alert("btn2");
-  //   });
+  //   document.getElementById("btn2").addEventListener('click',function(){
+  //     alert('btn2');
+  //   })
 
   //   document.getElementById("btn3").addEventListener("mouseenter",function(){
-  //     alert("btn3");
+  //     alert('btn3');
   //   })
 
   //   document.getElementById("btn4").addEventListener("mouseleave",function(){
-  //     alert("btn4");
+  //     alert('btn4');
   //   })
 
-  //Array Tanımlama
-  var sehirler = new Array(
+  var sehiler = new Array(
     "Ankara",
     "İstanbul",
     "İzmir",
@@ -69,15 +65,103 @@
     "Trabzon",
     "Samsun",
     "Artvin",
-    "Erzurum",
+    "Eruzum",
     "Gümüşhane"
   );
+  // let sehirler = ["Ankara","İstanbul","İzmir","Manisa","Trabzon","Samsun","Artvin","Eruzum","Gümüşhane"];
 
-  //Array Tanımlama version 2
-//   let sehirler = ["Ankara","İstanbul","İzmir","Manisa","Trabzon","Samsun","Artvin","Erzurum","Gümüşhane"]
+  document.getElementById("btn1").onclick = function () {
+    //lentgh => dizinin uzunluğunu teslim eder.
+    alert("Dizinin Uzunluğunu =>" + sehiler.length);
+  };
 
-document.getElementById("btn1").onclick = function(){
-    // length => dizinin uzunluğunu teslim eder.
-    alert("Dizinin uzunluğu => " + sehirler.length)
-}
+  document.getElementById("btn2").onclick = function () {
+    //includes => (C# => contains) dizi içerisindeki parametrede verdiğiniz değeri içerip içermediğini size true veya false olarak döner.
+
+    if (sehiler.includes("İstanbul")) {
+      alert("Var");
+    } else {
+      alert("Yok");
+    }
+
+    console.log(sehiler.includes("Ankara") ? "Var" : "Yok");
+  };
+
+  var cities = ["Adana", "Sivas"];
+
+  document.getElementById("btn3").onclick = function () {
+    //concat => İki diziyi birbirine ekler ve bize bir kopyasını teslim eder.
+    var result = sehiler.concat(cities);
+    console.log("Birleştirilen diziler => ", result);
+  };
+
+  var sonraki = sehiler.entries();
+
+  document.getElementById("btn4").onclick = function () {
+    //  entries => dizi içerisindeki elemanları sırası ile size teslim eder, her bir elemana ulaşabilmek için eleman.next().value diyerek bir sonraki elemanı index değeri ile teslim eder.
+
+    var item = sonraki.next().value;
+    if (item != null) console.log(item);
+    else console.log("Son elemana ulaşıldı.");
+  };
+
+  document.getElementById("btn5").onclick = function () {
+    //forEach
+
+    // $.each(sehiler, function (item, index) {
+    //   console.log(index + " - " + item);
+    // });
+
+    sehiler.forEach(function (item, index) {
+      console.log(index + " - " + item);
+    });
+  };
+
+  //push => dizinin sonuna eleman ekler
+  //pop => dizinin sonundan eleman siler
+  //unshift => dizinin başına eleman ekler
+  //shift => dizinin başından eleman siler
+
+  document.getElementById("btn6").onclick = function () {
+    sehiler.push("Tekirdağ");
+    sehiler.push("Kırıkkale");
+    console.log(sehiler);
+  };
+
+  document.getElementById("btn7").onclick = function () {
+    if (sehiler.length > 0) {
+      sehiler.pop();
+      console.log(sehiler);
+    } else {
+      console.log("Silinecek eleman kalmamıştır...");
+    }
+  };
+
+  document.getElementById("btn8").onclick = function () {
+    sehiler.unshift("Tekirdağ");
+    sehiler.unshift("Kırıkkale");
+    console.log(sehiler);
+  };
+
+  document.getElementById("btn9").onclick = function () {
+    if (sehiler.length > 0) {
+      sehiler.shift();
+      console.log(sehiler);
+    } else {
+      console.log("Silinecek eleman kalmamıştır...");
+    }
+  };
+
+  document.getElementById("btn10").onclick = function (){
+    //splice => dizi içerisinde belirli pozisoyna eleman ekleyebilir veya belirli pozisyondan elaman silebilirsiniz. İlk parametrede başlangıç index'i, ikinci parametrede o index değerinden başlayarak kaç eleman silineceği, sonraki parametreler de o index değerinden başlayarak dizi içerisinde eklenecek değerler belirtilir.
+
+    var array = ["one","two","for","five"];
+    //array elaman ekleme
+    array.splice(2,0,"three");
+    console.log(array);
+
+    //array eleman silme
+    array.splice(4,1);
+    console.log(array);
+  }
 </script>
