@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Base JavaScript Ders 6</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../ScriptFiles/Person.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" style="margin-top: 50px">
+        <div class="col-lg-6 col-lg-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Personel Adı:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="First Name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Personel Soyadı:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="form-group">
+                <label>Personel Yaş:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="age"
+                  placeholder="Age"
+                />
+              </div>
+              <div class="form-group">
+                <label>Personel Cinsiyeti</label>
+                <div class="radio">
+                  <label
+                    ><input
+                      type="radio"
+                      name="optradio"
+                      value="Kadın"
+                    />Kadın</label
+                  >
+                </div>
+                <div class="radio">
+                  <label
+                    ><input
+                      type="radio"
+                      name="optradio"
+                      value="Erkek"
+                    />Erkek</label
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <button id="btnPersonel" class="btn btn-default">
+                  Personel Bilgileri
+                </button>
+                <button id="btnEgitmen" class="btn btn-default">
+                  Eğitmen Bilgileri
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  document.getElementById("btnPersonel").onclick = function () {
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let age = document.getElementById("age").value;
+    let gender = document.querySelector("input[name=optradio]:checked").value;
+
+    var person = new Person(firstName, lastName);
+    console.log(person);
+    console.log(person.FullName());
+  };
+
+  document.getElementById("btnEgitmen").onclick = function () {
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let age = document.getElementById("age").value;
+    let gender = document.querySelector("input[name=optradio]:checked").value;
+
+    var egitmen = new Person(firstName, lastName);
+    Person.prototype.Age = age;
+    Person.prototype.Gender = gender;
+    Person.prototype.ToString = function () {
+      return egitmen.FullName() + " - " + egitmen.Age;
+    };
+    console.log(egitmen);
+    console.log(egitmen.Age);
+    console.log(egitmen.Gender);
+    console.log(egitmen.ToString());
+  };
+</script>
