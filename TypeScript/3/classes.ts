@@ -31,15 +31,16 @@ console.log(ev);
 class Kisi {
   private _isim: string;
 
-
   get isim(): string {
     return this._isim;
   }
 
-
-  set isim(ad:string){
+  set isim(ad: string) {
     this._isim = ad;
   }
+
+  public soyisim: string;
+  public yas: number;
 }
 
 let kisi = new Kisi();
@@ -53,3 +54,43 @@ console.log(kisi.isim);
 // Rest Servis => Servis Tipi
 // API => Genel Adı
 // Json => Veri Tipi
+
+class Musteri extends Kisi {
+  public email: string;
+
+  satisYap() {
+    console.log("Satış Yapıldı");
+  }
+}
+
+var musteri = new Musteri();
+musteri.isim = "Emre Can";
+musteri.soyisim = "Ayar";
+musteri.yas = 29;
+musteri.email = "emrecan.ayar@hotmail.com";
+musteri.satisYap();
+
+class Personel extends Kisi {
+  public userName: string;
+
+  maasOde() {
+    console.log("Maaş ödendi");
+  }
+}
+
+var personel = new Personel();
+personel.isim = "Merve";
+personel.soyisim = "Doğan";
+personel.yas = 25;
+personel.userName = "merve.dogan";
+personel.maasOde();
+
+class Product {
+  id: number;
+  productName: string;
+  description: string;
+  quantity: number;
+  price: number;
+}
+
+var ayse = new Product();
