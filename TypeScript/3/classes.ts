@@ -3,11 +3,11 @@ class Ev {
   pencereSayisi: number;
   kat: number;
 
-  //   constructor(odaSayisi: number, pencereSayisi: number, kat: number) {
-  //     this.odaSayisi = odaSayisi;
-  //     this.pencereSayisi = pencereSayisi;
-  //     this.kat = kat;
-  //   }
+    // constructor(odaSayisi: number, pencereSayisi: number, kat: number) {
+    //   this.odaSayisi = odaSayisi;
+    //   this.pencereSayisi = pencereSayisi;
+    //   this.kat = kat;
+    // }
 
   yemekYe() {
     console.log(this.kat + " katlı evde " + "yemek yiyildi");
@@ -93,4 +93,4 @@ class Product {
   price: number;
 }
 
-var ayse = new Product();
+var product = new Product();
