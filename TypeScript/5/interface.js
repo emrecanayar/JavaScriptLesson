@@ -14,3 +14,13 @@ function save2(product2) {
     console.log(product2.name + " kaydedildi");
 }
 save({ name: "Süt", amount: 20, price: 15, stock: 10, categoryId: 5 });
+var PersonPage = /** @class */ (function () {
+    function PersonPage() {
+    }
+    PersonPage.prototype.save = function () {
+        console.log("Interface implement edildi");
+    };
+    return PersonPage;
+}());
+var person = new PersonPage();
+person.save();

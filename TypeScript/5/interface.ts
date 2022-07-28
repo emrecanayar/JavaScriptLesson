@@ -3,7 +3,7 @@ interface Product {
   stock: number;
   amount: number;
   price: number;
-  categoryId:number;
+  categoryId: number;
 }
 
 class Product2 {
@@ -24,4 +24,19 @@ function save2(product2: Product2) {
   console.log(product2.name + " kaydedildi");
 }
 
-save({ name: "Süt", amount: 20, price: 15, stock: 10,categoryId:5 });
+save({ name: "Süt", amount: 20, price: 15, stock: 10, categoryId: 5 });
+
+interface PersonService {
+  save();
+}
+
+
+class PersonPage implements PersonService{
+  save() {
+    console.log("Interface implement edildi");
+  }
+  
+}
+
+var person = new PersonPage();
+person.save();
