@@ -29,6 +29,7 @@ const fetchUsers = async () => {
 }
 
 
+
 const users = await fetchUsers();
 
 console.log(users);
