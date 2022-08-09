@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jquery Ders 2</title>
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="./Scripts/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+      .metin {
+        width: 170px;
+        height: 150px;
+        float: left;
+        margin-right: 12px;
+        border-radius: 10px;
+        line-height: 150px;
+        text-align: center;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-size: large;
+        box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+      }
+    </style>
+    <script type="text/javascript">
+      //Jquery çalıştırmak için başlangıçta aşağıdaki yapılar kullanılır
+      //Version 1
+      //   $(document).ready(Load);
+
+      //   function Load() {
+      //     //Jquery kodlarını buraya yazabilirsin.
+      //     alert("Load Çalıştı");
+      //   }
+
+      //Version 2
+      //   $(document).ready(function () {
+      //     //Jquery kodlarını buraya yazabilirsin.
+      //     alert("Jquery Çalıştı");
+      //   });
+
+      $(document).ready(function () {
+        $("#bir").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Sayfa üzerindeki tüm 'p' etiklerini seç ve içeriğine Merhaba JQuery yazınız"
+          );
+          $("p").html("Merhaba JQuery");
+        });
+
+        $("#iki").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Id'si 'metin1' olan elementin içeriğine Merhaba JQuery yazınız"
+          );
+          $("#metin1").html("Merhaba JQuery");
+        });
+
+        $("#uc").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Id'si 'metin1'  ve 'metin2' olan elementin içeriğine Merhaba JQuery yazınız"
+          );
+          $("p#metin1,p#metin2").html("Merhaba JQuery");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" style="margin-top: 50px">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="col-lg-12">
+              <p
+                id="metin1"
+                lang="tr"
+                class="metin"
+                style="background-color: #ffdc00"
+              ></p>
+              <p
+                id="metin2"
+                lang="en"
+                class="metin"
+                style="background-color: #ff851b"
+              ></p>
+              <p
+                id="metin3"
+                lang="tr"
+                class="metin"
+                style="background-color: #ff4136"
+              ></p>
+              <p
+                id="MdMetin4"
+                lang="tr"
+                class="metin"
+                style="background-color: #01ff70"
+              ></p>
+              <p
+                id="metin5"
+                lang="tr"
+                class="metin"
+                style="background-color: #f012be"
+              ></p>
+              <p
+                id="MdMetin6"
+                lang="tr"
+                class="metin"
+                style="background-color: #39cccc"
+              ></p>
+            </div>
+          </div>
+        </div>
+        <figure>
+          <pre>
+                <span>
+                    <a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp">https://www.w3schools.com/jquery/jquery_ref_selectors.asp</a> adresinde tüm selectorleri bulabilirsin.
+                </span>
+                <span id="metin"></span>
+            </pre>
+        </figure>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="col-lg-12">
+              <div class="btn-group btn-group-justifed">
+                <a class="btn btn-default" id="bir">Örnek Bir</a>
+                <a class="btn btn-default" id="iki">Örnek İki</a>
+                <a class="btn btn-default" id="uc">Örnek Üç</a>
+                <a class="btn btn-default" id="dort">Örnek Dört</a>
+                <a class="btn btn-default" id="bes">Örnek Beş</a>
+                <a class="btn btn-default" id="alti">Örnek Altı</a>
+                <a class="btn btn-default" id="yedi">Örnek Yedi</a>
+                <a class="btn btn-default" id="sekiz">Örnek Sekiz</a>
+                <a class="btn btn-default" id="dokuz">Örnek Dokuz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

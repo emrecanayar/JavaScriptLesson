@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jquery Ders 1</title>
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+      function btnSendOnClick(deger) {
+        alert("Merhaba JavaScript " + deger);
+        console.log(deger);
+        document.getElementById("btnSend").value = "Tıkla!";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 50px">
+      <figure>
+        <pre>
+                <span style="font-weight:bold ;">JavaScript</span>
+                1995 yılında ortaya atilan bu teknolojinin asil amaci, sayfalarda gomulu halde bazi 
+                dinamik kodlarin calismasina olanak saglamakti. Microsoft cephesi bu teknolojiye
+                "JScript"; ECMA (Avrupa Bilgisayar Üreticileri Federasyonu) cephesi ise "ECMAScript"
+                adini verdiler.
+    
+                     Ancak belirli bir standardın sağlanması adına, ortak bir noktada
+                bulusuldu ve bugunku "JAVASCRIPT" teknolojisinin temelleri atildi. JavaScript kodlari
+                istemci (client) tarafli kodlardir. İstemcinin tarayici araciligi ile okunur,
+                 degerlendirilir ve calistirilir. C dilinin temellerini alarak ortaya cikmistir.
+             
+                    Eğer istemci tarayıcı ayarlarından "JavaScript'i Etkinleştir" ayarini kapatirsa
+                yazdiginiz onlarca kodun hicbir anlami kalmaz!
+      
+                    JavaScript kodları genellikle sayfanin "HEAD" blogu icerisine yazilir ancak dogru
+                bir konumlandirma gerceklestirilirse kodlarinizi "BODY" blogu icerisine de yazabilirsiniz.
+                Bilmeniz gereken sey; tarayicilar sayfayi okumaya en ustten baslar ve asagi dogru
+                devam eder...
+         
+                    JQuery ise, genel soylenen bir yanlisin aksine bir web teknolojisi degil, standart
+                bir JavaScript kutuphanesidir. Dunya uzerinde binlerce gelistiricisi vardir ve her
+                gecen gun bir yenilikle guncellenir.
+            </pre>
+      </figure>
+      <input
+        type="button"
+        class="btn btn-default btn-block"
+        id="btnSend"
+        value="Click!"
+        onclick="btnSendOnClick('Merve')"
+      />
+    </div>
+  </body>
+</html>
