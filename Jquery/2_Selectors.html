@@ -60,6 +60,54 @@
           );
           $("p#metin1,p#metin2").html("Merhaba JQuery");
         });
+
+        $("#dort").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Lang attribute'u 'tr' olan elemenlerin içeriğine Merhaba JQurey yazınız"
+          );
+          $("p[lang=tr]").html("Merhaba JQuery");
+        });
+
+        $("#bes").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Lang attribute'u 'tr' ve 'en' olan elemenlerin içeriğine Merhaba JQurey yazınız"
+          );
+          $("p[lang=tr],p[lang=en]").html("Merhaba JQuery");
+        });
+
+        $("#alti").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Lang attribute'u 'tr' ve id attribute'u 'metin2' elemenlerin içeriğine Merhaba JQurey yazınız"
+          );
+          $("p[lang=tr],p#metin2").html("Merhaba JQuery");
+        });
+
+        $("#yedi").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Id attribute 'u 'metin3' olamayan elemenlerin içeriğine Merhaba JQurey yazınız"
+          );
+          $("p[id!=metin3]").html("Merhaba JQuery");
+        });
+
+        $("#sekiz").click(function () {
+          $("p").html("");
+          $("#metin").html(
+            "Id attribute 'u 'me' ile başlayan elemenlerin içeriğine Merhaba JQurey yazınız"
+          );
+          $("p[id^=me]").html("Merhaba JQuery");
+        });
+
+        $("#dokuz").click(function(){
+          $("p").html("");
+          $("#metin").html(
+            "Id attribute 'u '4' ile biten elemenlerin içeriğine Merhaba JQurey yazınız"
+          );
+          $("p[id$=4]").html("Merhaba JQuery");
+        })
       });
     </script>
   </head>
