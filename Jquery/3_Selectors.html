@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JQuery Selectors 3</title>
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+      .arkaplan {
+        background-color: aqua;
+      }
+    </style>
+
+    <script src="./Scripts/jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 50px">
+      <div class="col-lg-12">
+        <a class="btn btn-default" id="OrnekBir">Örnek Bir</a>
+        <a class="btn btn-default" id="OrnekIki">Örnek İki</a>
+        <a class="btn btn-default" id="OrnekUc">Örnek Üç</a>
+        <a class="btn btn-default" id="OrnekDort">Örnek Dört</a>
+        <a class="btn btn-default" id="OrnekBes">Örnek Beş</a>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-lg-6">
+          <ul id="sehirler" class="list-group">
+            <li class="list-group-item">İstanbul</li>
+            <li class="list-group-item">Ankara</li>
+            <li class="list-group-item">İzmir</li>
+            <li class="list-group-item">Bursa</li>
+            <li class="list-group-item">Eskişehir</li>
+            <li class="list-group-item">Edirne</li>
+            <li class="list-group-item">Malatya</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="metin well well-lg">Bu sene kim şampiyon olacak?</div>
+          <div class="metin well well-lg">Her yer hangi renk'e boyanacak?</div>
+          <div class="metin well well-lg">Yine tarih hangi takımı yazacak?</div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-lg-6">
+          <input
+            type="text"
+            class="form-control"
+            name="txtDisabled"
+            disabled="disabled"
+          />
+          <input type="text" class="form-control" name="txtEnabled" />
+        </div>
+      </div>
+      <hr />
+      <div class="row" style="margin-top: 50px">
+        <div class="col-lg-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <table class="table table-hover" id="semtler">
+                <thead>
+                  <tr>
+                    <th>Şehir</th>
+                    <th>Semt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>İstanbul</td>
+                    <td>Bakırköy</td>
+                  </tr>
+                  <tr>
+                    <td>İstanbul</td>
+                    <td>Üsküdar</td>
+                  </tr>
+                  <tr>
+                    <td>İstanbul</td>
+                    <td>Sarıyer</td>
+                  </tr>
+                  <tr>
+                    <td>Ankara</td>
+                    <td>Çankaya</td>
+                  </tr>
+                  <tr>
+                    <td>Ankara</td>
+                    <td>Mamak</td>
+                  </tr>
+                  <tr>
+                    <td>Ankara</td>
+                    <td>Yeni Mahalle</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Şehir</th>
+                    <th>Semt</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  //Sayfa yüklendiğinde bir fonksiyon çalıştır.
+  $(document).ready(function () {
+    //id attribute 'u sehirler olan listenin elemanlarına müdahele etme.
+    $("#OrnekBir").click(function () {
+      $("ul#sehirler > li").css({
+        color: "blue",
+        "background-color": "red",
+        "font-weight": "bold",
+        "text-align": "center",
+      });
+    });
+
+    // id attribute'ü sehirler olan listenin tek ve çift sayılı olan elemanlarına müdahele edelim.
+    // odd => 1,3,5,7 gibi tek elamanları etkiler
+    // even => 2,4,6,8 gibi çift elemanları etkiler
+
+    $("#OrnekIki").click(function () {
+      //Tek olanlar
+      $("ul#sehirler > li:odd").css({
+        color: "black",
+        "background-color": "#FFDC00",
+        "font-weight": "bold",
+        "text-align": "center",
+      });
+
+      //Çift olanlar
+
+      $("ul#sehirler > li:even").css({
+        color: "white",
+        "background-color": "black",
+        "font-weight": "bold",
+        "text-align": "right",
+      });
+    });
+
+    //class attribute'u 'metin' olan divler içerisinde "renk" geçenlerin stillerine müdahale edelim.
+    $("#OrnekUc").click(function () {
+      $("div.metin:contains('renk')")
+        .css("color", "red")
+        .css("background-color", "#FFDC00");
+    });
+
+    //disabled modde olan text inputlarına müdahele edelim
+    $("#OrnekDort").click(function () {
+      $("input:disabled").val("Bu kontrol deaktiftir");
+      var deger = $("input:disabled").val();
+      alert(deger);
+    });
+
+    //id attribute'u 'semtler' olan tablonun tek indexli elemanlarına müdahele etme
+    $("#OrnekBes").click(function () {
+      $("table#semtler tr:odd").addClass("arkaplan");
+      $("div.metin").removeClass("well-lg").addClass("well-sm");
+    });
+  });
+</script>
