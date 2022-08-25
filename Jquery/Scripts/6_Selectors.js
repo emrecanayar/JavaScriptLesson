@@ -41,7 +41,7 @@ $(document).ready(function () {
       index = 0;
       var secondTimer = setInterval(() => {
         if (index == elemanlar.length) {
-          clearInterval(timer);
+          clearInterval(secondTimer);
         }
 
         $(elemanlar[index]).css("background-color", colors[index]);
