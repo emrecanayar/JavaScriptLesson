@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>JavaScript Local WebStorage</title>
+  <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body id="body">
+  <div class="container">
+    <div class="row" style="margin-top: 50px">
+      <h1 class="well well-sm">Html 5 Local Storage</h1>
+      <form name="frmStorage">
+        <div class="row">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <label>Key:</label>
+                  <input type="text" class="form-control" name="key" />
+                </div>
+                <div class="form-group">
+                  <label>Value:</label>
+                  <input type="text" class="form-control" name="value" />
+                </div>
+                <input
+                  id="btnSetItem"
+                  type="button"
+                  class="btn btn-info"
+                  value="Set Item"
+                />
+              </div>
+              <div class="col-lg-8">
+                <h2>Items</h2>
+                <table id="items" class="table table-hover"></table>
+                <input
+                  id="btnClear"
+                  type="button"
+                  class="btn btn-danger"
+                  value="Clear"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  document.getElementById("body").onload = function () {
+    showAll();
+  };
+
+  //Ekrandaki input alanlarına veri girildiğinde bu verileri okuyup local strorage kaydetme işlemini yapar.
+  document.getElementById("btnSetItem").onclick = function () {
+    var key = document.forms.frmStorage.key.value;
+    var value = document.forms.frmStorage.value.value;
+    localStorage.setItem(key, value);
+    document.forms.frmStorage.key.value = "";
+    document.forms.frmStorage.value.value = "";
+    showAll();
+  };
+
+  // Ekrandaki input alanlarını ve localStorage alanını temizler.
+  document.getElementById("btnClear").onclick = function () {
+    localStorage.clear();
+    document.forms.frmStorage.key.value = "";
+    document.forms.frmStorage.value.value = "";
+    showAll();
+  };
+
+  //Local Storage da yer alan verileri okuyup items id li table a yazdırma işlemini yapar.
+  function showAll() {
+    var key = "";
+    var items = "<tr><th>Key</th><th>Value</th></tr>\n";
+
+    for (let i = 0; i < localStorage.length; i++) {
+      key = localStorage.key(i);
+      items += `<tr><td>${key}</td><td>${localStorage.getItem(key)}</td></tr>`;
+    }
+
+    if (items == "<tr><th>Key</th><th>Value</th></tr>\n") {
+      items += "<tr><td>Empty</td><td>Empty</td></tr>";
+    }
+
+    document.getElementById("items").innerHTML = items;
+  }
+</script>
